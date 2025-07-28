@@ -16,6 +16,7 @@
           git
 
           cargo
+          rustc
           rust-analyzer
         ];
       };
