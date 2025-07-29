@@ -26,6 +26,9 @@
 
           my-rust
           rust-analyzer
+
+          rustPlatform.bindgenHook
+          cmake
         ];
       };
     });

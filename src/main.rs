@@ -10,7 +10,9 @@ const DOCTYPE: &str =
 fn App() -> Html {
     html! {
         <EmailHtml>
-            <div>{"Hello, World!"}</div>
+            <div>
+                {"Hello, World!"}
+            </div>
         </EmailHtml>
     }
 }
@@ -19,6 +21,15 @@ fn App() -> Html {
 async fn main() {
     let renderer = ServerRenderer::<App>::new();
     let rendered = renderer.render().await;
-    let output = format!("{DOCTYPE}{rendered}");
-    println!("{}", output);
+
+    let opts = tidier::FormatOptions::new()
+        .tabs(true)
+        .strip_comments(true);
+    let output = tidier::format(
+        rendered,
+        false,
+        &opts,
+    ).expect("format html");
+
+    println!("{DOCTYPE}\n{output}");
 }
