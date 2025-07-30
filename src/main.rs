@@ -1,7 +1,7 @@
 use yew::prelude::*;
 use yew::ServerRenderer;
 
-use email_components_rs::components::EmailHtml;
+use email_components_rs::components::{Body, EmailHtml};
 
 const DOCTYPE: &str =
     r#"<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">"#;
@@ -10,9 +10,11 @@ const DOCTYPE: &str =
 fn App() -> Html {
     html! {
         <EmailHtml>
-            <div>
-                {"Hello, World!"}
-            </div>
+            <Body>
+                <div>
+                    {"Hello, World!"}
+                </div>
+            </Body>
         </EmailHtml>
     }
 }
