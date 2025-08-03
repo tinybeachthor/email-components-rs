@@ -9,11 +9,5 @@ pub struct Props {
 pub fn Text(props: &Props) -> Html {
     let Props { children } = props;
 
-    html! {
-        <p
-            style="fontSize:'14px'; lineHeight:'24px'"
-        >
-            { children.clone() }
-        </p>
-    }
+    html! { <p style="fontSize: '14px'; lineHeight: '24px'">{ children.clone() }</p> }
 }

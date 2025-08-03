@@ -1,4 +1,4 @@
-pub use yew::{function_component, html, AttrValue, Properties};
+pub use yew::{AttrValue, Properties, function_component, html};
 
 #[derive(Properties, PartialEq)]
 pub struct Props {
@@ -14,7 +14,12 @@ pub struct Props {
 
 #[function_component]
 pub fn Img(props: &Props) -> yew::Html {
-    let Props { src, width, height, alt } = props;
+    let Props {
+        src,
+        width,
+        height,
+        alt,
+    } = props;
 
     yew::html! {
         <img
@@ -22,7 +27,7 @@ pub fn Img(props: &Props) -> yew::Html {
             width={width}
             height={height}
             alt={alt}
-            style="display:'block'; outline:'none'; border:'none'; textDecoration: 'none'"
+            style="display: 'block'; outline: 'none'; border: 'none'; textDecoration: 'none'"
         />
     }
 }

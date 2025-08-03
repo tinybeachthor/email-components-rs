@@ -1,4 +1,4 @@
-use yew::{function_component, html, AttrValue, Html, Properties};
+use yew::{AttrValue, Html, Properties, function_component, html};
 
 #[derive(Properties, PartialEq)]
 pub struct Props {
@@ -13,11 +13,8 @@ pub fn Link(props: &Props) -> Html {
     let Props { target, children } = props;
 
     html! {
-        <a
-            style="color:'#067df7'; textDecorationLine:'none'"
-            target={target}
-        >
-            {children.clone()}
+        <a style="color: '#067df7'; textDecorationLine: 'none'" target={target}>
+            { children.clone() }
         </a>
     }
 }

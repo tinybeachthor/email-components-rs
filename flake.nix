@@ -29,7 +29,10 @@
 
           rustPlatform.bindgenHook
           cmake
+
+          yew-fmt
         ];
+        RUSTFMT="yew-fmt";
       };
     });
 }

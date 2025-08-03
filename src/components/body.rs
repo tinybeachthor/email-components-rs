@@ -1,4 +1,4 @@
-use yew::{function_component, Properties};
+use yew::{Properties, function_component};
 
 #[derive(Properties, PartialEq)]
 pub struct Props {
@@ -9,9 +9,5 @@ pub struct Props {
 pub fn Body(props: &Props) -> yew::Html {
     let Props { children } = props;
 
-    yew::html! {
-        <body>
-            { children.clone() }
-        </body>
-    }
+    yew::html! { <body>{ children.clone() }</body> }
 }

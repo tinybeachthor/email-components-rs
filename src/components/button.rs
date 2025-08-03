@@ -1,4 +1,4 @@
-use yew::{function_component, html, AttrValue, Html, Properties};
+use yew::{AttrValue, Html, Properties, function_component, html};
 
 #[derive(Properties, PartialEq)]
 pub struct Props {
@@ -14,13 +14,24 @@ pub fn Button(props: &Props) -> Html {
 
     html! {
         <a
-            style="line-height:'100%'; text-decoration:'none'; display:'inline-block'; max-width:'100%'; mso-padding-alt:'0px'"
+            style="
+                line-height: '100%';
+                text-decoration: 'none';
+                display: 'inline-block';
+                max-width: '100%';
+                mso-padding-alt: '0px'
+            "
             target={target}
         >
             <span
-                style="max-width:'100%'; display:'inline-block'; line-height:'120%'; mso-padding-alt:'0px'"
+                style="
+                    max-width: '100%';
+                    display: 'inline-block';
+                    line-height: '120%';
+                    mso-padding-alt: '0px'
+                "
             >
-                {children.clone()}
+                { children.clone() }
             </span>
         </a>
     }

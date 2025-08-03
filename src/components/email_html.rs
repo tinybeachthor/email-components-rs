@@ -1,4 +1,4 @@
-use yew::{function_component, AttrValue, Properties};
+use yew::{AttrValue, Properties, function_component};
 
 #[derive(Properties, PartialEq)]
 pub struct Props {
@@ -12,11 +12,11 @@ pub struct Props {
 
 #[function_component]
 pub fn EmailHtml(props: &Props) -> yew::Html {
-    let Props { lang, dir, children } = props;
+    let Props {
+        lang,
+        dir,
+        children,
+    } = props;
 
-    yew::html! {
-        <html lang={lang} dir={dir}>
-            { children.clone() }
-        </html>
-    }
+    yew::html! { <html lang={lang} dir={dir}>{ children.clone() }</html> }
 }
