@@ -1,15 +1,10 @@
-use yew::ServerRenderer;
-use yew::prelude::*;
-
 use email_components::{
     Body, Button, Container, EmailHtml, Img, Link, Section, Text,
 };
+use yew::{function_component, html, Html};
 
-const DOCTYPE: &str = r#"<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">"#;
-
-#[allow(non_snake_case)]
 #[function_component]
-fn App() -> Html {
+pub fn Email() -> Html {
     // TODO
     let base_url = "";
     let username = "USERNAME";
@@ -53,15 +48,4 @@ fn App() -> Html {
             </Body>
         </EmailHtml>
     }
-}
-
-#[tokio::main]
-async fn main() {
-    let renderer = ServerRenderer::<App>::new();
-    let rendered = renderer.render().await;
-
-    let opts = tidier::FormatOptions::new().tabs(true).strip_comments(true);
-    let output = tidier::format(rendered, false, &opts).expect("format html");
-
-    println!("{DOCTYPE}\n{output}");
 }
