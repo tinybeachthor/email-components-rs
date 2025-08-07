@@ -1,9 +1,15 @@
-[package]
-name = "email-components-rs"
+[workspace]
+resolver = "3"
+members = ["email-components", "email-examples"]
+
+[workspace.package]
 version = "0.1.0"
 edition = "2024"
 
-[dependencies]
+[workspace.dependencies]
+email-components = { path = "./email-components" }
+
+axum = "0.8.4"
 tidier = "0.5.3"
-tokio = { version = "1.47.0", features = ["full"] }
-yew = { version = "0.21.0", features = ["ssr"] }
+tokio = "1.47.0"
+yew = "0.21.0"

@@ -1,0 +1,13 @@
+[package]
+publish = false
+name = "email-examples"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+email-components.workspace = true
+
+axum.workspace = true
+tokio = { workspace = true, features = ["full"] }
+tidier.workspace = true
+yew = { workspace = true, features = ["ssr"] }

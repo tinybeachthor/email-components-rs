@@ -1,0 +1,7 @@
+[package]
+name = "email-components"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+yew.workspace = true
