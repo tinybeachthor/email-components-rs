@@ -1,4 +1,5 @@
-use email_examples::{email::github::Email, render};
+use email_components::render;
+use email_examples::email::github::Email;
 
 #[tokio::main]
 async fn main() {

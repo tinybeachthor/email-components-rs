@@ -58,7 +58,6 @@ pub fn Email() -> Html {
             <Container class={main}>
                 // Title
                 //
-                //
                 <Img
                     src={format!("{base_url}/static/github.png")}
                     width="32"
@@ -67,10 +66,9 @@ pub fn Email() -> Html {
                 />
                 <Text>
                     <strong>{ '@' }{ username }</strong>
-                    { ", a personal access was created on your account." }
+                    { ", a personal access token was created on your account." }
                 </Text>
                 // Body
-                //
                 //
                 <Section class={body}>
                     <Text class={text.clone()}>
@@ -80,7 +78,7 @@ pub fn Email() -> Html {
                     </Text>
                     <Text class={text}>
                         { "A fine-grained personal access token (" }
-                        <Link>{ "resend" }</Link>
+                        <Link>{ "token" }</Link>
                         { ") was recently added to your account." }
                     </Text>
                     <Button class={button}>{ "View your token" }</Button>
@@ -91,7 +89,6 @@ pub fn Email() -> Html {
                     <Link>{ "Contact support" }</Link>
                 </Text>
                 // Footer
-                //
                 //
                 <Text class={footer}>
                     { "GitHub, Inc. - 88 Colin P Kelly Jr Street - San Francisco, CA 94107" }

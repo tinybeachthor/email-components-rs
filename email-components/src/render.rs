@@ -1,11 +1,12 @@
-use email_components::email_html::HEAD_PLACEHOLDER;
 use stylist::{
     manager::{StyleManager, render_static},
     yew::ManagerProvider,
 };
 use yew::{BaseComponent, Html, Properties, ServerRenderer, function_component, html};
 
-const DOCTYPE: &str = r#"<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">"#;
+use crate::email_html::HEAD_PLACEHOLDER;
+
+pub const DOCTYPE: &str = r#"<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">"#;
 
 pub async fn render<C>(props: C::Properties) -> String
 where
