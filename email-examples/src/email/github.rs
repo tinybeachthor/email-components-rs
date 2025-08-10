@@ -1,6 +1,6 @@
 use email_components::{Body, Button, Container, EmailHtml, Img, Link, Section, Text};
 use stylist::yew::use_style;
-use yew::{Html, function_component, html};
+use yew::{function_component, html, Html};
 
 #[function_component]
 pub fn Email() -> Html {
@@ -8,8 +8,16 @@ pub fn Email() -> Html {
     let base_url = "";
     let username = "USERNAME";
 
-    let container = use_style!("max-width:'480px'; margin:'0 auto'; padding:'20px 0 48px';");
-    let footer = use_style!("color:'#6a737d'; text-align:'center'; margin-top:'60px';");
+    let container = use_style!("
+        max-width: '480px';
+        margin: '0 auto';
+        padding: '20px 0 48px';
+    ");
+    let footer = use_style!(
+        "color: '#6a737d';
+        text-align: 'center';
+        margin-top: '60px';
+    ");
 
     html! {
         <EmailHtml>

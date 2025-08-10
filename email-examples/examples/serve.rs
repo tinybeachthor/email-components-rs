@@ -13,7 +13,7 @@ async fn main() {
 }
 
 async fn index() -> Response {
-    let output = render::<Email>().await;
+    let output = render::<Email>(()).await;
 
     Response::builder()
         .header("content-type", "text/html")
