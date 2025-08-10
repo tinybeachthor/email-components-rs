@@ -1,13 +1,14 @@
-use yew::{Html, Properties, function_component, html};
+use yew::{Classes, Html, Properties, function_component, html};
 
 #[derive(Properties, PartialEq)]
 pub struct Props {
+    pub class: Classes,
     pub children: Html,
 }
 
 #[function_component]
 pub fn Section(props: &Props) -> Html {
-    let Props { children } = props;
+    let Props { class, children } = props;
 
     html! {
         <table
@@ -17,6 +18,7 @@ pub fn Section(props: &Props) -> Html {
             cellpadding="0"
             cellspacing="0"
             role="presentation"
+            class={class.clone()}
         >
             <tbody>
                 <tr>
