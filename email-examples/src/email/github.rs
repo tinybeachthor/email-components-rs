@@ -1,4 +1,4 @@
-use email_components::{Body, Button, Container, EmailHtml, Img, Link, Section, Text};
+use email_components::{Button, Container, EmailHtml, Img, Link, Section, Text};
 use stylist::yew::use_style;
 use yew::{function_component, html, Html};
 
@@ -21,7 +21,6 @@ pub fn Email() -> Html {
 
     html! {
         <EmailHtml>
-            <Body>
                 <Container class={container}>
                     // Title
                     //
@@ -61,7 +60,6 @@ pub fn Email() -> Html {
                         { "GitHub, Inc. - 88 Colin P Kelly Jr Street - San Francisco, CA 94107" }
                     </Text>
                 </Container>
-            </Body>
         </EmailHtml>
     }
 }

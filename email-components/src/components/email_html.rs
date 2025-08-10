@@ -1,5 +1,7 @@
 use yew::{AttrValue, Properties, function_component};
 
+pub const HEAD_PLACEHOLDER: &str = "###HEAD_PLACEHOLDER###";
+
 #[derive(Properties, PartialEq)]
 pub struct Props {
     #[prop_or(AttrValue::Static("en"))]
@@ -18,5 +20,15 @@ pub fn EmailHtml(props: &Props) -> yew::Html {
         children,
     } = props;
 
-    yew::html! { <html lang={lang} dir={dir}>{ children.clone() }</html> }
+    yew::html! {
+        <html lang={lang} dir={dir}>
+            <head>
+                <meta charset="utf-8" />
+                {HEAD_PLACEHOLDER}
+            </head>
+            <body>
+                { children.clone() }
+            </body>
+        </html>
+    }
 }

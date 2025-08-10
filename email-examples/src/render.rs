@@ -1,3 +1,4 @@
+use email_components::email_html::HEAD_PLACEHOLDER;
 use stylist::{manager::{render_static, StyleManager}, yew::ManagerProvider};
 use yew::{function_component, html, BaseComponent, Html, Properties, ServerRenderer};
 
@@ -24,9 +25,9 @@ where
     style_data.write_static_markup(&mut styles)
         .expect("failed to read styles from style manager");
 
-    println!("{styles}");
+    let rendered_with_styles = rendered.replace(HEAD_PLACEHOLDER, &styles);
 
-    format!("{DOCTYPE}\n{rendered}")
+    format!("{DOCTYPE}\n{rendered_with_styles}")
 }
 
 #[derive(Properties, PartialEq)]
