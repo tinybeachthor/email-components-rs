@@ -11,3 +11,4 @@ keywords = ["email", "template", "yew"]
 
 [dependencies]
 yew.workspace = true
+stylist = { workspace = true, features = ["yew", "yew_use_style"] }

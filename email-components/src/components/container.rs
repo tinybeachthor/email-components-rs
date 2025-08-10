@@ -1,13 +1,15 @@
-use yew::{Html, Properties, function_component, html};
+use yew::{Classes, Html, Properties, function_component, html};
 
 #[derive(Properties, PartialEq)]
 pub struct Props {
+    #[prop_or_default]
+    pub class: Classes,
     pub children: Html,
 }
 
 #[function_component]
 pub fn Container(props: &Props) -> Html {
-    let Props { children } = props;
+    let Props { class, children } = props;
 
     html! {
         <table
@@ -17,7 +19,7 @@ pub fn Container(props: &Props) -> Html {
             cellPadding="0"
             cellSpacing="0"
             role="presentation"
-            style="maxWidth: '37.5em'"
+            class={class.clone()}
         >
             <tbody>
                 <tr style="width: '100%'">

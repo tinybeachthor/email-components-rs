@@ -8,6 +8,7 @@ edition.workspace = true
 email-components.workspace = true
 
 axum.workspace = true
+stylist = { workspace = true, features = ["yew", "yew_use_style", "ssr"] }
 tokio = { workspace = true, features = ["full"] }
 tidier.workspace = true
 yew = { workspace = true, features = ["ssr"] }

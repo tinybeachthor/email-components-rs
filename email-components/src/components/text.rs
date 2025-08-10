@@ -1,13 +1,27 @@
-use yew::{Html, Properties, function_component, html};
+use stylist::yew::use_style;
+use yew::{Classes, Html, Properties, classes, function_component, html};
 
 #[derive(Properties, PartialEq)]
 pub struct Props {
+    #[prop_or_default]
+    pub class: Classes,
     pub children: Html,
 }
 
 #[function_component]
 pub fn Text(props: &Props) -> Html {
-    let Props { children } = props;
+    let Props { class, children } = props;
 
-    html! { <p style="fontSize: '14px'; lineHeight: '24px'">{ children.clone() }</p> }
+    let default = use_style!("fontSize:'14px'; lineHeight:'24px';");
+
+    html! {
+        <p
+            class={classes!(
+                default,
+                class.clone(),
+            )}
+        >
+            { children.clone() }
+        </p>
+    }
 }

@@ -1,7 +1,6 @@
-use email_components::{
-    Body, Button, Container, EmailHtml, Img, Link, Section, Text,
-};
-use yew::{function_component, html, Html};
+use email_components::{Body, Button, Container, EmailHtml, Img, Link, Section, Text};
+use stylist::yew::use_style;
+use yew::{Html, function_component, html};
 
 #[function_component]
 pub fn Email() -> Html {
@@ -9,10 +8,15 @@ pub fn Email() -> Html {
     let base_url = "";
     let username = "USERNAME";
 
+    let container = use_style!("max-width:'480px'; margin:'0 auto'; padding:'20px 0 48px';");
+    let footer = use_style!("color:'#6a737d'; text-align:'center'; margin-top:'60px';");
+
     html! {
         <EmailHtml>
             <Body>
-                <Container>
+                <Container class={container}>
+                    // Title
+                    //
                     <Img
                         src={format!("{base_url}/static/github.png")}
                         width="32"
@@ -23,6 +27,8 @@ pub fn Email() -> Html {
                         <strong>{ '@' }{ username }</strong>
                         { ", a personal access was created on your account." }
                     </Text>
+                    // Body
+                    //
                     <Section>
                         <Text>
                             { "Hey " }
@@ -41,7 +47,9 @@ pub fn Email() -> Html {
                         { " - " }
                         <Link>{ "Contact support" }</Link>
                     </Text>
-                    <Text>
+                    // Footer
+                    //
+                    <Text class={footer}>
                         { "GitHub, Inc. - 88 Colin P Kelly Jr Street - San Francisco, CA 94107" }
                     </Text>
                 </Container>

@@ -14,6 +14,7 @@ homepage = "https://github.com/tinybeachthor/email-components-rs"
 email-components = { path = "./email-components" }
 
 axum = "0.8.4"
+stylist = "0.13.0"
 tidier = "0.5.3"
 tokio = "1.47.0"
 yew = "0.21.0"
