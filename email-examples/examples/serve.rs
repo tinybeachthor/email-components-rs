@@ -1,11 +1,10 @@
 use axum::{Router, response::Response, routing::get};
-use yew::ServerRenderer;
 
-use email_examples::email::github::Email;
+use email_examples::{email::github::Email, render};
 
 #[tokio::main]
 async fn main() {
-    let app = Router::new().route("/", get(render));
+    let app = Router::new().route("/", get(index));
 
     // run with hyper, listening globally
     println!("listening on http://0.0.0.0:3000");
@@ -13,9 +12,8 @@ async fn main() {
     axum::serve(listener, app).await.unwrap();
 }
 
-async fn render() -> Response {
-    let renderer = ServerRenderer::<Email>::new();
-    let output = renderer.render().await;
+async fn index() -> Response {
+    let output = render::<Email>().await;
 
     Response::builder()
         .header("content-type", "text/html")
