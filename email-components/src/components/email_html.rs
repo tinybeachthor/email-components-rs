@@ -24,11 +24,9 @@ pub fn EmailHtml(props: &Props) -> yew::Html {
         <html lang={lang} dir={dir}>
             <head>
                 <meta charset="utf-8" />
-                {HEAD_PLACEHOLDER}
+                { HEAD_PLACEHOLDER }
             </head>
-            <body>
-                { children.clone() }
-            </body>
+            <body>{ children.clone() }</body>
         </html>
     }
 }

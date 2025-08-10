@@ -16,13 +16,13 @@ pub fn Container(props: &Props) -> Html {
             align="center"
             width="100%"
             border=0
-            cellPadding="0"
-            cellSpacing="0"
+            cellpadding="0"
+            cellspacing="0"
             role="presentation"
             class={class.clone()}
         >
             <tbody>
-                <tr style="width: '100%'">
+                <tr style="width: 100%">
                     <td>{ children.clone() }</td>
                 </tr>
             </tbody>

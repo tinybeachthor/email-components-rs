@@ -12,7 +12,12 @@ pub struct Props {
 pub fn Text(props: &Props) -> Html {
     let Props { class, children } = props;
 
-    let default = use_style!("fontSize:'14px'; lineHeight:'24px';");
+    let default = use_style!(
+        "
+        font-size: 14px;
+        line-height: 24px;
+    "
+    );
 
     html! {
         <p

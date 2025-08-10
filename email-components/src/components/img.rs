@@ -27,7 +27,7 @@ pub fn Img(props: &Props) -> yew::Html {
             width={width}
             height={height}
             alt={alt}
-            style="display: 'block'; outline: 'none'; border: 'none'; textDecoration: 'none'"
+            style="display: block; outline: none; border: none; text-decoration: none"
         />
     }
 }

@@ -1,6 +1,9 @@
 use email_components::email_html::HEAD_PLACEHOLDER;
-use stylist::{manager::{render_static, StyleManager}, yew::ManagerProvider};
-use yew::{function_component, html, BaseComponent, Html, Properties, ServerRenderer};
+use stylist::{
+    manager::{StyleManager, render_static},
+    yew::ManagerProvider,
+};
+use yew::{BaseComponent, Html, Properties, ServerRenderer, function_component, html};
 
 const DOCTYPE: &str = r#"<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">"#;
 
@@ -16,13 +19,17 @@ where
             .writer(writer)
             .build()
             .expect("failed to create style manager");
-        Props { style_manager, inner_props: props }
+        Props {
+            style_manager,
+            inner_props: props,
+        }
     });
     let rendered = renderer.render().await;
 
     let style_data = reader.read_style_data();
     let mut styles = String::new();
-    style_data.write_static_markup(&mut styles)
+    style_data
+        .write_static_markup(&mut styles)
         .expect("failed to read styles from style manager");
 
     let rendered_with_styles = rendered.replace(HEAD_PLACEHOLDER, &styles);
@@ -45,7 +52,10 @@ where
     C: BaseComponent,
     C::Properties: Clone,
 {
-    let Props { style_manager, inner_props } = props;
+    let Props {
+        style_manager,
+        inner_props,
+    } = props;
 
     html! {
         <ManagerProvider manager={style_manager.clone()}>
