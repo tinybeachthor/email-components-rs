@@ -1,6 +1,6 @@
 [workspace]
 resolver = "3"
-members = ["email-components", "email-examples"]
+members = [ "caniemail","email-components", "email-examples"]
 
 [workspace.package]
 edition = "2024"
@@ -13,7 +13,11 @@ homepage = "https://github.com/tinybeachthor/email-components-rs"
 email-components = { path = "./email-components" }
 
 axum = "0.8.4"
+html_parser = "0.7.0"
 stylist = "0.13.0"
+serde = "1.0.219"
+serde_json = "1.0.142"
+thiserror = "2.0.14"
 tidier = "0.5.3"
 tokio = "1.47.0"
 yew = "0.21.0"
